@@ -4,8 +4,8 @@
     <variable type="" id="|uwYzghD`yidmSLT^EVw">Fake Amount Won/Lost</variable>
     <variable type="" id="/{FN}5p]~X!~M?0U0f-)">Runonce</variable>
     <variable type="" id="VsMj,?6ucc-2At_yr;g.">PayoutRising</variable>
-    <variable type="" id="Pp65=mGag7j1yv,yH3Th">Fake Buy / Sell Result</variable>
     <variable type="" id="@-FX=5sBg}X(,6k*isiw">Fake purchase Direction</variable>
+    <variable type="" id="Pp65=mGag7j1yv,yH3Th">Fake Buy / Sell Result</variable>
     <variable type="" id="6`Py-i`Wlr=7^*I=0s.2">FakeStake</variable>
     <variable type="" id="[GrC#Ru@M_:SXBtO.O5z">PayoutFalling</variable>
     <variable type="" id="hcONb^^%EaR-:KoTl[/f">Fake Candle Direction</variable>
@@ -325,40 +325,25 @@
       <block type="controls_if" id="Rx*?nWt0fe;~lIJ/tS)B">
         <mutation else="1"></mutation>
         <value name="IF0">
-          <block type="logic_compare" id="!1,%?zU?3%3n~*{X#fT!">
-            <field name="OP">LT</field>
+          <block type="logic_compare" id="x.`;/i.FQ`Z3[5Vi1kQ^">
+            <field name="OP">EQ</field>
             <value name="A">
-              <block type="lists_getIndex" id=".sr%!`y}z|_Z.HADe|_E">
-                <mutation statement="false" at="true"></mutation>
-                <field name="MODE">GET</field>
-                <field name="WHERE">FROM_START</field>
-                <value name="VALUE">
-                  <block type="variables_get" id="yT:gg?YoXdw!`LcQ^s[l">
-                    <field name="VAR" id="?SXoEQ1sR=$9[rtX_EO9" variabletype="">Close List</field>
-                  </block>
+              <block type="math_random_int" id="(fAW[:LJg7gpn(WHoL(a">
+                <value name="FROM">
+                  <shadow type="math_number" id="tZtm8hPkQ5)$|o{Y1ou5">
+                    <field name="NUM">1</field>
+                  </shadow>
                 </value>
-                <value name="AT">
-                  <block type="variables_get" id="~LQ-X{gYPPpn1a_|tmWw">
-                    <field name="VAR" id="Z4]TAS4sU=sipXdxrFEd" variabletype="">i</field>
-                  </block>
+                <value name="TO">
+                  <shadow type="math_number" id="06{Q{!wEWC{CssQ]B)]u">
+                    <field name="NUM">2</field>
+                  </shadow>
                 </value>
               </block>
             </value>
             <value name="B">
-              <block type="lists_getIndex" id=",AjT.Z.%N!mtt7v[9}5J">
-                <mutation statement="false" at="true"></mutation>
-                <field name="MODE">GET</field>
-                <field name="WHERE">FROM_START</field>
-                <value name="VALUE">
-                  <block type="variables_get" id="2-a+|cfqJ9jL#Q+jp9$_">
-                    <field name="VAR" id="v8B`$n3c/dIS8nI-*dGl" variabletype="">Open List</field>
-                  </block>
-                </value>
-                <value name="AT">
-                  <block type="variables_get" id="}6)lEsl+`EU7;TR2wu[y">
-                    <field name="VAR" id="Z4]TAS4sU=sipXdxrFEd" variabletype="">i</field>
-                  </block>
-                </value>
+              <block type="math_number" id="9EWJc{io!W}HYeDK_Qi^">
+                <field name="NUM">1</field>
               </block>
             </value>
           </block>
