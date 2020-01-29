@@ -1,15 +1,11 @@
-<xml xmlns="http://www.w3.org/1999/xhtml" collection="true">
+<xml xmlns="http://www.w3.org/1999/xhtml" collection="false">
   <variables>
     <variable type="" id=":7Q8|82).rJ1JD}TvnpH">LastCandleOpen</variable>
-    <variable type="" id="gYo#UFKJtJ^STqDvM(R2">Amount Owed</variable>
     <variable type="" id="_nDN^)}:m!-S7/bPU5|3">LastCandleClose</variable>
-    <variable type="" id=",MgmUs{-}f^_Vgn~/0[z">Stake</variable>
     <variable type="" id="eMsIY-[XQF]L:t2H[3F(">LastCandleHigh</variable>
     <variable type="" id="8o?9uD=S[X`(9Ps|#pV)">LastCandleLow</variable>
-    <variable type="" id=";*Tarwh5]Z}[4t2S:1qm">Initial</variable>
     <variable type="" id="WH@T4Rv7kEBzZ^_8my!#">PrevCandleOpen</variable>
     <variable type="" id="w]/((*j!JsBYPwz[}_(E">PrevCandleClose</variable>
-    <variable type="" id="0pNYc~el}w=Q#sNgZ3r8">MM Divider</variable>
     <variable type="" id="UG1q+8JeC-mZBsJ(ybDY">PrevCandleHigh</variable>
     <variable type="" id="N6/6j3om?U-2k64WG%[p">PrevCandleLow</variable>
     <variable type="" id="CAqyb6!d1dlnIaDj]ReS">HAOpenCalcOnly</variable>
@@ -18,181 +14,6 @@
     <variable type="" id="?nmjcA6#P$fz{3t!E7?Q">HAHigh</variable>
     <variable type="" id="IN/dDX/rJqckJUN.R@!8">HALow</variable>
   </variables>
-  <block type="after_purchase" id="D^Jz1^n=2vtZku1vBN@;" x="0" y="0">
-    <statement name="AFTERPURCHASE_STACK">
-      <block type="controls_if" id="~xS=E4I,ySkVrptNOwDC">
-        <mutation elseif="1"></mutation>
-        <value name="IF0">
-          <block type="contract_check_result" id="LDWfP7/V+SGx_Q;a~_uY">
-            <field name="CHECK_RESULT">win</field>
-          </block>
-        </value>
-        <statement name="DO0">
-          <block type="math_change" id="#-mF.9f6^}foN2l/QAct">
-            <field name="VAR" id="gYo#UFKJtJ^STqDvM(R2" variabletype="">Amount Owed</field>
-            <value name="DELTA">
-              <shadow type="math_number" id="1N}cK6h`9gq5}C12JNM;">
-                <field name="NUM">1</field>
-              </shadow>
-              <block type="math_single" id="!L^%U{LVH?wj%E*uPc`-">
-                <field name="OP">NEG</field>
-                <value name="NUM">
-                  <shadow type="math_number" id="4;G2,_`xtc-KLZvsgz.z">
-                    <field name="NUM">9</field>
-                  </shadow>
-                  <block type="read_details" id="acC`|eXFrG*D@uy3Spjt">
-                    <field name="DETAIL_INDEX">4</field>
-                  </block>
-                </value>
-              </block>
-            </value>
-          </block>
-        </statement>
-        <value name="IF1">
-          <block type="contract_check_result" id="t8et~/d$8-|p~%z8/,Kf">
-            <field name="CHECK_RESULT">loss</field>
-          </block>
-        </value>
-        <statement name="DO1">
-          <block type="math_change" id="n(mTg16rJElD9sH[n*_U">
-            <field name="VAR" id="gYo#UFKJtJ^STqDvM(R2" variabletype="">Amount Owed</field>
-            <value name="DELTA">
-              <shadow type="math_number" id="1N}cK6h`9gq5}C12JNM;">
-                <field name="NUM">1</field>
-              </shadow>
-              <block type="variables_get" id="9on~}q.sDW:htI(jdnis">
-                <field name="VAR" id=",MgmUs{-}f^_Vgn~/0[z" variabletype="">Stake</field>
-              </block>
-            </value>
-          </block>
-        </statement>
-        <next>
-          <block type="variables_set" id="(jTllby/4^$xm8%sTMbB">
-            <field name="VAR" id="gYo#UFKJtJ^STqDvM(R2" variabletype="">Amount Owed</field>
-            <value name="VALUE">
-              <block type="math_constrain" id="[:Ddx[81qhdB:W~i|aYe">
-                <value name="VALUE">
-                  <shadow type="math_number" id=")=}q]@$]8UHQ_BVq(N`n">
-                    <field name="NUM">50</field>
-                  </shadow>
-                  <block type="variables_get" id="d=Dfs7v-MGO;?~*|7#|!">
-                    <field name="VAR" id="gYo#UFKJtJ^STqDvM(R2" variabletype="">Amount Owed</field>
-                  </block>
-                </value>
-                <value name="LOW">
-                  <shadow type="math_number" id="0J%820kbdg?}M5)+j^K^">
-                    <field name="NUM">0</field>
-                  </shadow>
-                </value>
-                <value name="HIGH">
-                  <shadow type="math_number" id="Afb,A/5PKy,%$)t.+TE%">
-                    <field name="NUM">10000</field>
-                  </shadow>
-                </value>
-              </block>
-            </value>
-            <next>
-              <block type="variables_set" id="YseROr94e0H`[;JTi9;S">
-                <field name="VAR" id=",MgmUs{-}f^_Vgn~/0[z" variabletype="">Stake</field>
-                <value name="VALUE">
-                  <block type="math_constrain" id="fh:s~(7:jV0D,jQ.pmcJ">
-                    <value name="VALUE">
-                      <shadow type="math_number" id=")=}q]@$]8UHQ_BVq(N`n">
-                        <field name="NUM">50</field>
-                      </shadow>
-                      <block type="math_arithmetic" id="5QpAk?TvlL@_OzF2hEjl">
-                        <field name="OP">ADD</field>
-                        <value name="A">
-                          <shadow type="math_number" id="+HAifdC7@/]2e5%I;CwQ">
-                            <field name="NUM">1</field>
-                          </shadow>
-                          <block type="variables_get" id="iX7InpUSB0@04i*(;_c+">
-                            <field name="VAR" id=";*Tarwh5]Z}[4t2S:1qm" variabletype="">Initial</field>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <shadow type="math_number" id="vnf%=d8ZPyQBIi:H9+Aw">
-                            <field name="NUM">1</field>
-                          </shadow>
-                          <block type="math_arithmetic" id="NP2B9R?HC?!)Qt-mEimO">
-                            <field name="OP">DIVIDE</field>
-                            <value name="A">
-                              <shadow type="math_number" id="x]{bMDNcouEl^lM5vt,C">
-                                <field name="NUM">1</field>
-                              </shadow>
-                              <block type="variables_get" id="J]NC)53QmC0sKG7Sr)hO">
-                                <field name="VAR" id="gYo#UFKJtJ^STqDvM(R2" variabletype="">Amount Owed</field>
-                              </block>
-                            </value>
-                            <value name="B">
-                              <shadow type="math_number" id="*Fw6cWuRRD9`d#k2d[xf">
-                                <field name="NUM">1</field>
-                              </shadow>
-                              <block type="variables_get" id="T[NQfpWS?9*xg]YB#9.Q">
-                                <field name="VAR" id="0pNYc~el}w=Q#sNgZ3r8" variabletype="">MM Divider</field>
-                              </block>
-                            </value>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                    <value name="LOW">
-                      <shadow type="math_number" id="!q;MbWL_Wa_Mre[#xH|Q">
-                        <field name="NUM">0</field>
-                      </shadow>
-                      <block type="variables_get" id="-5~T!3k2zayc?H#?*fT*">
-                        <field name="VAR" id=";*Tarwh5]Z}[4t2S:1qm" variabletype="">Initial</field>
-                      </block>
-                    </value>
-                    <value name="HIGH">
-                      <shadow type="math_number" id="M+LpScs#Kq/{Y`vNx/}7">
-                        <field name="NUM">10000</field>
-                      </shadow>
-                    </value>
-                  </block>
-                </value>
-                <next>
-                  <block type="notify" id="AxIc?@gH$0(TW,ZxkByZ">
-                    <field name="NOTIFICATION_TYPE">success</field>
-                    <field name="NOTIFICATION_SOUND">silent</field>
-                    <value name="MESSAGE">
-                      <shadow type="text" id="N#ub=@f$aqN%yA3qSH6R">
-                        <field name="TEXT">abc</field>
-                      </shadow>
-                      <block type="text_join" id="BmA1n;0kgY]eo9uw?pQ,">
-                        <mutation items="2"></mutation>
-                        <value name="ADD0">
-                          <block type="text" id="onv0pV!!~DQ_h|mwW{9+">
-                            <field name="TEXT">amount owed: </field>
-                          </block>
-                        </value>
-                        <value name="ADD1">
-                          <block type="math_round" id="_s-S4i44KFh!]~JnI?i4">
-                            <field name="OP">ROUND</field>
-                            <value name="NUM">
-                              <shadow type="math_number" id="N?-P^#(6xSoGtXTbU-|e">
-                                <field name="NUM">3.1</field>
-                              </shadow>
-                              <block type="variables_get" id="R%3iClW~Qr}[)0,jU00W">
-                                <field name="VAR" id="gYo#UFKJtJ^STqDvM(R2" variabletype="">Amount Owed</field>
-                              </block>
-                            </value>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                    <next>
-                      <block type="trade_again" id="c)S|KjoQdXc8l#J@5z3P"></block>
-                    </next>
-                  </block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
   <block type="trade" id="xgH69|xFn9=70w.*3Vo@" x="0" y="445">
     <field name="MARKET_LIST">forex</field>
     <field name="SUBMARKET_LIST">major_pairs</field>
@@ -207,8 +28,6 @@
       <block type="tradeOptions" id="x=V33~4Lb|(sLv`J[:Eb">
         <field name="DURATIONTYPE_LIST">t</field>
         <field name="CURRENCY_LIST">USD</field>
-        <field name="BARRIEROFFSETTYPE_LIST">+</field>
-        <field name="SECONDBARRIEROFFSETTYPE_LIST">-</field>
         <value name="DURATION">
           <shadow type="math_number" id="{$Sad?f{!MGE^+FdO.;Q">
             <field name="NUM">5</field>
@@ -222,7 +41,16 @@
       </block>
     </statement>
   </block>
-  <block type="before_purchase" id="i-CIx.(Onm4?ihxzA}Y]" x="0" y="924">
+  <block type="during_purchase" id="(4;NieXd}j|Bn!c-YiC|" x="0" y="511">
+    <statement name="DURING_PURCHASE_STACK">
+      <block type="controls_if" id="8?eYKAW%VczmRXQ-ou3r">
+        <value name="IF0">
+          <block type="check_sell" id="M=:_KpEeRAJY_}XTU^8~"></block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="before_purchase" id="i-CIx.(Onm4?ihxzA}Y]" x="0" y="848">
     <statement name="BEFOREPURCHASE_STACK">
       <block type="variables_set" id="L+^Iu,_tCg@MBa!H!!Zx">
         <field name="VAR" id=":7Q8|82).rJ1JD}TvnpH" variabletype="">LastCandleOpen</field>
