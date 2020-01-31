@@ -3,34 +3,23 @@
     <variable type="" id="*9..#_ZyM.T|^lt9VR`M">Simulation Or Blow By Blow?</variable>
     <variable type="" id="VsMj,?6ucc-2At_yr;g.">Fake Payout Rising</variable>
     <variable type="" id="|uwYzghD`yidmSLT^EVw">Fake Amount Won/Lost</variable>
-    <variable type="" id="[GrC#Ru@M_:SXBtO.O5z">Fake Payout Falling</variable>
     <variable type="" id="@-FX=5sBg}X(,6k*isiw">Fake purchase Direction</variable>
     <variable type="" id="Pp65=mGag7j1yv,yH3Th">Fake Buy / Sell Result</variable>
+    <variable type="" id="[GrC#Ru@M_:SXBtO.O5z">Fake Payout Falling</variable>
     <variable type="" id="6`Py-i`Wlr=7^*I=0s.2">FakeStake</variable>
     <variable type="" id="hcONb^^%EaR-:KoTl[/f">Fake Candle Direction</variable>
     <variable type="" id="/{FN}5p]~X!~M?0U0f-)">Fake Runonce</variable>
-    <variable type="" id="Z4]TAS4sU=sipXdxrFEd">Fake i</variable>
     <variable type="" id="?SXoEQ1sR=$9[rtX_EO9">Fake Close List</variable>
     <variable type="" id="v8B`$n3c/dIS8nI-*dGl">Fake Open List</variable>
     <variable type="" id="]%6M(X!5A.]q}1CJiiaw">Fake Max Lost</variable>
+    <variable type="" id="Z4]TAS4sU=sipXdxrFEd">Fake i</variable>
     <variable type="" id="vQ?hO/#fbP|V9LjhzTY2">Fake High List</variable>
     <variable type="" id="MxG~NitCCZVyu:|_2KSK">Fake Low List</variable>
   </variables>
-  <block type="procedures_defnoreturn" id="{oIZFw^YMv,^5m)tBgO," x="713" y="-10">
-    <field name="NAME">Backtest Run Once At Start</field>
+  <block type="procedures_defnoreturn" id="{oIZFw^YMv,^5m)tBgO," x="0" y="0">
+    <field name="NAME">Backtest Move Into "Run Once At Start"</field>
     <comment pinned="false" h="80" w="160">Describe this function...</comment>
-  </block>
-  <block type="trade" id="xgH69|xFn9=70w.*3Vo@" x="810" y="62">
-    <field name="MARKET_LIST">synthetic_index</field>
-    <field name="SUBMARKET_LIST">random_daily</field>
-    <field name="SYMBOL_LIST">RDBEAR</field>
-    <field name="TRADETYPECAT_LIST">callput</field>
-    <field name="TRADETYPE_LIST">risefall</field>
-    <field name="TYPE_LIST">both</field>
-    <field name="CANDLEINTERVAL_LIST">60</field>
-    <field name="TIME_MACHINE_ENABLED">FALSE</field>
-    <field name="RESTARTONERROR">TRUE</field>
-    <statement name="INITIALIZATION">
+    <statement name="STACK">
       <block type="variables_set" id=":h!X@+/V}N.b043%N2{:">
         <field name="VAR" id="*9..#_ZyM.T|^lt9VR`M" variabletype="">Simulation Or Blow By Blow?</field>
         <value name="VALUE">
@@ -83,7 +72,7 @@
                               <block type="ohlc_values_in_list" id="BwV5RE-LqGF/vd@3aqkE">
                                 <field name="OHLCFIELD_LIST">close</field>
                                 <value name="OHLCLIST">
-                                  <block type="ohlc" id="J=%lU)+oRy^3K9Y=u+yH">
+                                  <block type="ohlc" id="J=%lU)+oRy^3K9Y=u+yH" disabled="true">
                                     <field name="CANDLEINTERVAL_LIST">default</field>
                                   </block>
                                 </value>
@@ -96,7 +85,7 @@
                                   <block type="ohlc_values_in_list" id="9cFq/|]+6tu-o[eNW~;O">
                                     <field name="OHLCFIELD_LIST">high</field>
                                     <value name="OHLCLIST">
-                                      <block type="ohlc" id="4S-vT05;V*}arygaC@u|">
+                                      <block type="ohlc" id="4S-vT05;V*}arygaC@u|" disabled="true">
                                         <field name="CANDLEINTERVAL_LIST">default</field>
                                       </block>
                                     </value>
@@ -109,7 +98,7 @@
                                       <block type="ohlc_values_in_list" id="=pJb-f#d@!wLWlz=CJ6{">
                                         <field name="OHLCFIELD_LIST">low</field>
                                         <value name="OHLCLIST">
-                                          <block type="ohlc" id="5vbgxD}[3H/8ZFP=}?0;">
+                                          <block type="ohlc" id="5vbgxD}[3H/8ZFP=}?0;" disabled="true">
                                             <field name="CANDLEINTERVAL_LIST">default</field>
                                           </block>
                                         </value>
@@ -122,7 +111,7 @@
                                           <block type="ohlc_values_in_list" id="6~2y6Qk#;;_Gg#F7dh}`">
                                             <field name="OHLCFIELD_LIST">open</field>
                                             <value name="OHLCLIST">
-                                              <block type="ohlc" id="m4fV5Yci/j0_j2_7:]ZB">
+                                              <block type="ohlc" id="m4fV5Yci/j0_j2_7:]ZB" disabled="true">
                                                 <field name="CANDLEINTERVAL_LIST">default</field>
                                               </block>
                                             </value>
@@ -146,60 +135,13 @@
         </next>
       </block>
     </statement>
-    <statement name="SUBMARKET">
-      <block type="tradeOptions" id="x=V33~4Lb|(sLv`J[:Eb">
-        <field name="DURATIONTYPE_LIST">t</field>
-        <field name="CURRENCY_LIST">USD</field>
-        <field name="BARRIEROFFSETTYPE_LIST">+</field>
-        <field name="SECONDBARRIEROFFSETTYPE_LIST">-</field>
-        <value name="DURATION">
-          <shadow type="math_number" id="OY|y~_4vLIwl*w6d]5LM">
-            <field name="NUM">1</field>
-          </shadow>
-        </value>
-        <value name="AMOUNT">
-          <shadow type="math_number" id="ml)25~7^q}3I9}vjf:%K">
-            <field name="NUM">1</field>
-          </shadow>
-        </value>
-      </block>
-    </statement>
   </block>
-  <block type="after_purchase" id="D^Jz1^n=2vtZku1vBN@;" x="0" y="651">
-    <statement name="AFTERPURCHASE_STACK">
-      <block type="trade_again" id="c)S|KjoQdXc8l#J@5z3P"></block>
-    </statement>
-  </block>
-  <block type="procedures_defnoreturn" id=":VwT+S3}vmPtw,aZ),by" x="883" y="889">
-    <field name="NAME">Fake Strategy Goes In Here</field>
+  <block type="procedures_defnoreturn" id=":VwT+S3}vmPtw,aZ),by" x="0" y="391">
+    <field name="NAME">Fake Strategy Goes In Here - Use the Purchase Direction here instead of Purchase rise/fal in block 2 l!!!</field>
     <comment pinned="false" h="80" w="160">Describe this function...</comment>
     <statement name="STACK">
       <block type="controls_if" id="Rx*?nWt0fe;~lIJ/tS)B">
         <mutation else="1"></mutation>
-        <value name="IF0">
-          <block type="logic_compare" id="x.`;/i.FQ`Z3[5Vi1kQ^">
-            <field name="OP">EQ</field>
-            <value name="A">
-              <block type="math_random_int" id="(fAW[:LJg7gpn(WHoL(a">
-                <value name="FROM">
-                  <shadow type="math_number" id="tZtm8hPkQ5)$|o{Y1ou5">
-                    <field name="NUM">1</field>
-                  </shadow>
-                </value>
-                <value name="TO">
-                  <shadow type="math_number" id="06{Q{!wEWC{CssQ]B)]u">
-                    <field name="NUM">2</field>
-                  </shadow>
-                </value>
-              </block>
-            </value>
-            <value name="B">
-              <block type="math_number" id="9EWJc{io!W}HYeDK_Qi^">
-                <field name="NUM">1</field>
-              </block>
-            </value>
-          </block>
-        </value>
         <statement name="DO0">
           <block type="variables_set" id="pfJ`bn[].iJsS^]SI?4U">
             <field name="VAR" id="@-FX=5sBg}X(,6k*isiw" variabletype="">Fake purchase Direction</field>
@@ -223,12 +165,14 @@
       </block>
     </statement>
   </block>
-  <block type="before_purchase" id="i-CIx.(Onm4?ihxzA}Y]" x="-52" y="1008">
-    <statement name="BEFOREPURCHASE_STACK">
+  <block type="procedures_defnoreturn" id=";pcc.k)%bXzd$vt$zh;y" x="0" y="585">
+    <field name="NAME">Backtester Add Into "Block 2"</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
       <block type="variables_set" id="G(%IDhAlJ|oMZe`S=@#/">
         <field name="VAR" id="VsMj,?6ucc-2At_yr;g." variabletype="">Fake Payout Rising</field>
         <value name="VALUE">
-          <block type="payout" id="+jM8M=V{RHQ1N^$O*AwT">
+          <block type="payout" id="+jM8M=V{RHQ1N^$O*AwT" disabled="true">
             <field name="PURCHASE_LIST">CALL</field>
           </block>
         </value>
@@ -236,7 +180,7 @@
           <block type="variables_set" id="u6/5_;{yBjhH!U|IS#90">
             <field name="VAR" id="[GrC#Ru@M_:SXBtO.O5z" variabletype="">Fake Payout Falling</field>
             <value name="VALUE">
-              <block type="payout" id="oIu5x$2Fb{*iVpT(4VeY">
+              <block type="payout" id="oIu5x$2Fb{*iVpT(4VeY" disabled="true">
                 <field name="PURCHASE_LIST">PUT</field>
               </block>
             </value>
@@ -272,7 +216,7 @@
                     </value>
                     <statement name="DO">
                       <block type="procedures_callnoreturn" id="vIjQ?v{tsJS`9*H(9VGH">
-                        <mutation name="Fake Strategy Goes In Here"></mutation>
+                        <mutation name="Fake Strategy Goes In Here - Use the Purchase Direction here instead of Purchase rise/fal in block 2 l!!!"></mutation>
                         <next>
                           <block type="controls_if" id="`Xh?K~(:]^NC4Hihy+9z">
                             <mutation else="1"></mutation>
@@ -283,12 +227,12 @@
                             </value>
                             <statement name="DO0">
                               <block type="procedures_callnoreturn" id="|K8YuA~_MM.M192atY3z">
-                                <mutation name="fakeCall"></mutation>
+                                <mutation name="fakeCall (Don't Modify)"></mutation>
                               </block>
                             </statement>
                             <statement name="ELSE">
                               <block type="procedures_callnoreturn" id="lbM,Go=m0a{Wg_Toc0ha">
-                                <mutation name="fakePut"></mutation>
+                                <mutation name="fakePut (do not modify)"></mutation>
                               </block>
                             </statement>
                             <next>
@@ -312,7 +256,7 @@
                                       </block>
                                     </value>
                                     <statement name="DO0">
-                                      <block type="timeout" id="T4l^kcWDFDKk$`~nC2K$">
+                                      <block type="timeout" id="T4l^kcWDFDKk$`~nC2K$" disabled="true">
                                         <statement name="TIMEOUTSTACK">
                                           <block type="procedures_callnoreturn" id=";Ssc4{A%^=~4Oq3XA0=+">
                                             <mutation name="Fake Notify"></mutation>
@@ -349,7 +293,7 @@
                   <block type="procedures_callnoreturn" id="Q4(kD22?VLuPC3}Z}Y=N">
                     <mutation name="Fake Notify"></mutation>
                     <next>
-                      <block type="timeout" id="I^jJ1_;VZ~-KVm)XftqW">
+                      <block type="timeout" id="I^jJ1_;VZ~-KVm)XftqW" disabled="true">
                         <statement name="TIMEOUTSTACK">
                           <block type="text_print" id="IGy3`0j}gfKz*[[X(06d">
                             <value name="TEXT">
@@ -358,7 +302,7 @@
                               </shadow>
                             </value>
                             <next>
-                              <block type="purchase" id="aP@P99d?uGWYI;1`*GG#">
+                              <block type="purchase" id="aP@P99d?uGWYI;1`*GG#" disabled="true">
                                 <field name="PURCHASE_LIST">CALL</field>
                               </block>
                             </next>
@@ -380,8 +324,8 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" id="^8!|}EMRD2{;^$M1;f^9" x="743" y="1449">
-    <field name="NAME">fakeCall</field>
+  <block type="procedures_defnoreturn" id="^8!|}EMRD2{;^$M1;f^9" x="0" y="1311">
+    <field name="NAME">fakeCall (Don't Modify)</field>
     <comment pinned="false" h="80" w="160">Describe this function...</comment>
     <statement name="STACK">
       <block type="controls_if" id="pE.{S0cg|hNo(YassHW`">
@@ -494,8 +438,8 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" id="nrFtf=GKg,wb7;@DQ]b$" x="727" y="1797">
-    <field name="NAME">fakePut</field>
+  <block type="procedures_defnoreturn" id="nrFtf=GKg,wb7;@DQ]b$" x="0" y="1618">
+    <field name="NAME">fakePut (do not modify)</field>
     <comment pinned="false" h="80" w="160">Describe this function...</comment>
     <statement name="STACK">
       <block type="controls_if" id="Q81|dnyz-xisoL1R!W*J">
@@ -608,7 +552,7 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" id="ub^`@CD{uDzRlyCEW;G_" x="719" y="2123">
+  <block type="procedures_defnoreturn" id="ub^`@CD{uDzRlyCEW;G_" x="0" y="1925">
     <field name="NAME">Fake Block 4 Simulated Do not put into block 4</field>
     <comment pinned="false" h="80" w="160">Describe this function...</comment>
     <statement name="STACK">
@@ -725,7 +669,7 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" id="S8|j2v:J#M.M1{])!-#." x="719" y="2560">
+  <block type="procedures_defnoreturn" id="S8|j2v:J#M.M1{])!-#." x="0" y="2312">
     <field name="NAME">Fake Notify</field>
     <comment pinned="false" h="80" w="160">Describe this function...</comment>
     <statement name="STACK">
