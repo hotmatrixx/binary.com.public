@@ -1,4 +1,4 @@
-Hi guys.
+BackTester:
 This is built as a 'collection' meaning that you can import it into an existing script, then add it to your strategy for backtesting.
 
 caveat;
