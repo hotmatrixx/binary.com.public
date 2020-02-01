@@ -1,4 +1,6 @@
 readme:
 this is added as a block, and in it's current form gives you the open/close/hi/low of the current Heinken Candle, only.
+this allows you to analyse the candle, using HAOpen, HAClose, HAHigh, HALow.
 
 I suppose I could make an array that gives all 4 values for each candle..... maybe one day.
+
